@@ -1,11 +1,12 @@
 # Server
 
+### Alle Gruppen eines Benutzer auflisten
 
-dsquery user -samid MUSTERMANN | dsget user -memberof -expand
+`dsquery user -samid MUSTERMANN | dsget user -memberof -expand`
 
 https://www.medic-daniel.de/active-directory/2012/10/active-directory-mitglieder-einer-gruppe-auslesen
 
-Mitglieder einer Gruppe auslesen
+### Mitglieder einer Gruppe auslesen
 
 #Nun listen wir uns alle DNs der Mitglieder in der Gruppe
 
