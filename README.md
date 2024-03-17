@@ -20,3 +20,12 @@ https://www.medic-daniel.de/active-directory/2012/10/active-directory-mitglieder
 
 `get-adgroupmember "Domain Users" |ft name`
 
+S.M.A.R.T. Werte auslesen
+`wmic diskdrive get model,name,serialnumber,status`
+```
+Model                                  Name                SerialNumber          Status  
+Samsung SSD 860 PRO 256GB              \\.\PHYSICALDRIVE0  S42VNX0N503966F       OK      
+SanDisk Extreme 55AE SCSI Disk Device  \\.\PHYSICALDRIVE3  2350AE400782          OK      
+Samsung SSD 990 PRO with Heatsink 2TB  \\.\PHYSICALDRIVE1  0025_3846_3141_0BB8.  OK      
+Samsung SSD 990 PRO with Heatsink 2TB  \\.\PHYSICALDRIVE2  0025_384C_3141_1DE7.  OK      
+```
