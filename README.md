@@ -8,15 +8,15 @@ https://www.medic-daniel.de/active-directory/2012/10/active-directory-mitglieder
 
 ### Mitglieder einer Gruppe auslesen
 
-#Nun listen wir uns alle DNs der Mitglieder in der Gruppe
+## Nun listen wir uns alle DNs der Mitglieder in der Gruppe
 
 `dsquery group -samid "Domain Users" |dsget group -members`
 
-#Da man meist die Login Namen benötigt wandeln wir nun die DNs in SAMAccountNames um
+## Da man meist die Login Namen benötigt wandeln wir nun die DNs in SAMAccountNames um
 
 `dsquery group -samid "Domain Users" |dsget group -members -expand |dsget user -samid`
 
-#Mit der Powershell verkuerzt sich der Befehl enorm
+## Mit der Powershell verkürzt sich der Befehl enorm
 
 `get-adgroupmember "Domain Users" |ft name`
 
@@ -39,6 +39,3 @@ https://github.com/BLAKE3-team/BLAKE3
 
 ```cd /D "E:\Backup\RA-SERVER\Virtual Hard Disks"
 blake3 RA-SERVER-F.vhdx>RA-SERVER-F.blake3```
-
-
-
