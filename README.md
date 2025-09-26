@@ -16,9 +16,29 @@ https://www.medic-daniel.de/active-directory/2012/10/active-directory-mitglieder
 
 `dsquery group -samid "Domain Users" |dsget group -members -expand |dsget user -samid`
 
+## Windows 11 Rechner auflisten
+dsquery * -filter "(objectCategory=Computer)" -attr name operatingSystemVersion -limit 0 | find "26100" | sort>computer.txt
+Anzahl Zeilen entspricht der Anzahl der Win11 Computer
+```
+find /c /v "" computer.txt
+---------- COMPUTER.TXT: 7793
+```
+
+Sinngemäß kann man anschließend die Arbeitsstationen abfragen.
+```
+find /c "MZ10W" computer.txt
+---------- COMPUTER.TXT: 31
+```
+
+```
+findstr "MZ10N MZ10W" computer.txt | find /c /v ":"
+247
+```
 ## Mit der Powershell verkürzt sich der Befehl enorm
 
 `get-adgroupmember "Domain Users" |ft name`
+
+
 
 ### S.M.A.R.T. Werte auslesen
 `wmic diskdrive get model,name,serialnumber,status`
@@ -37,5 +57,7 @@ Samsung SSD 990 PRO with Heatsink 2TB  \\.\PHYSICALDRIVE2  0025_384C_3141_1DE7. 
 Das dauer mit den 'üblichen' Mitten/Programmen sehr, sehr lange. Ich spreche hier von Checksummen für 600GB.
 https://github.com/BLAKE3-team/BLAKE3
 
-```cd /D "E:\Backup\RA-SERVER\Virtual Hard Disks"
-blake3 RA-SERVER-F.vhdx>RA-SERVER-F.blake3```
+```
+cd /D "E:\Backup\RA-SERVER\Virtual Hard Disks"
+blake3 RA-SERVER-F.vhdx>RA-SERVER-F.blake3
+```
