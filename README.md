@@ -18,6 +18,7 @@ https://www.medic-daniel.de/active-directory/2012/10/active-directory-mitglieder
 
 ## Windows 11 Rechner auflisten
 `dsquery * -filter "(objectCategory=Computer)" -attr name operatingSystemVersion -limit 0 | find "26100" | sort>computer.txt`
+
 Anzahl Zeilen entspricht der Anzahl der Win11 Computer
 ```
 find /c /v "" computer.txt
