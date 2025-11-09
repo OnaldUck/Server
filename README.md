@@ -62,3 +62,14 @@ https://github.com/BLAKE3-team/BLAKE3
 cd /D "E:\Backup\RA-SERVER\Virtual Hard Disks"
 blake3 RA-SERVER-F.vhdx>RA-SERVER-F.blake3
 ```
+
+
+### DHCP Reservierung erstellen mit bestimmer Adresse
+Im DHCP Server eine ganz bestimmte Adresse reservieren lassen.
+
+```
+Get-DhcpServerv4Lease -ScopeId 10.0.0.0
+
+Get-DhcpServerv4Lease -IPAddress 10.19.130.43 | Add-DhcpServerv4Reservation -IPAddress 10.19.130.11
+```
+
