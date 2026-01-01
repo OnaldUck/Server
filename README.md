@@ -1,9 +1,11 @@
 # Server
 
 ## Privates Netzwerk fälschlicherweise als öffentliches Netzwerk erkannt
+
 Wenn privates Netzwerk fälschlicherweise als öffentliches Netzwerk erkannt wird, können Sie dies in den Windows-Einstellungen einfach wieder auf privat umstellen.
 
 `Get-NetConnectionProfile`
+
 `Set-NetConnectionProfile -InterfaceIndex [Index] -NetworkCategory Private`
 
 ### Alle Gruppen eines Benutzer auflisten
